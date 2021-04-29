@@ -252,9 +252,9 @@ def learn_deblurring_model(num_res_blocks = 5 ,quick_mode = False):
          steps_per_epoch = 100
          num_epochs = 10
          num_valid_sampels = 1000
-         images = sol5_utils.images_for_denoising()
-         new_model = build_nn_model(16, 16, 32, num_res_blocks)
-         func = lambda im: random_motion_blur(im, [7])
-         train_model(new_model, images, func, batch_size, steps_per_epoch, num_epochs,
+     images = sol5_utils.images_for_denoising()
+     new_model = build_nn_model(16, 16, 32, num_res_blocks)
+     func = lambda im: random_motion_blur(im, [7])
+     train_model(new_model, images, func, batch_size, steps_per_epoch, num_epochs,
         num_valid_sampels)
      return new_model
